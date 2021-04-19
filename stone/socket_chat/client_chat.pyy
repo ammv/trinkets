@@ -1,0 +1,51 @@
+import socket
+import threading
+
+
+'''SERVER'''
+class ChatClient:
+
+    def __init__(self, ip, port, nickname):
+        self.ip = ip
+        print('IP: ', self.ip)
+        
+        self.port = port
+        print('PORT: ', self.port)
+
+
+        self.nickname = nickname
+        print('Nickname: ', self.nickname)
+
+        self.socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        print('socket: ', self.socket)
+
+        self.socket.bind(('', 0))
+        
+
+    def read_socket(self):
+        while True:
+            data = self.socket.recv(1024)
+            print(data.decode('utf-8'))
+
+    def server_send(self):
+        data = (self.nickname + ' connect to server').encode('utf-8')
+        self.socket.sendto(data, (self.ip, self.port))
+
+    def client_send(self, message):
+        data = ('[{}] {}'.format(self.nickname, message)).encode('utf-8')
+        self.socket.sendto(data, (self.ip, self.port))
+
+    def thread(self):
+        thr = threading.Thread(target=self.read_socket)
+        thr.start()
+
+        
+
+chat = ChatClient('192.168.1.5', 8888, 'Artem')
+chat.server_send()
+chat.thread()
+while True:
+    message = input('Ваше сообщение: ')
+    chat.client_send(message)
+        
+        
