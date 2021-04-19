@@ -1,0 +1,1 @@
+I learned that if you just add up the binary representations of two primes as strings and turn them into a number, you can get another prime number. It doesn't always work that way, but damn it, it works! In the program, you only need to enter 2 prime numbers, and the output will get the number that turned out, and check whether it is simple.
