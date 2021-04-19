@@ -1,0 +1,1 @@
+I tried to create a bot for a group in the VK for the game Unturned. But the project was canceled for some reason. These programs are designed to create a sorted and convenient list of items in json for easy work with the bot.
