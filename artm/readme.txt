@@ -1,0 +1,1 @@
+Here I tried to create my own programming language. I didn't have any serious goals, as I have a lot of writing to do. Lexer, token list, etc. I made it according to the guide on habr

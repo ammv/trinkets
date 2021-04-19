@@ -1,0 +1,8 @@
+a = 4
+output(a)
+
+b = a
+c = b
+output(c)
+output(242424)
+output("Егор")
