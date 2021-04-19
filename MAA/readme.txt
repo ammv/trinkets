@@ -1,0 +1,1 @@
+I was trying to create my own data compression algorithm. Yes, it's a failure. I made it in a couple of days due to lack of time. It's almost useless, but it works.
